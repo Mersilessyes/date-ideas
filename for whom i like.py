@@ -6,7 +6,7 @@ import random
 import tkinter as tk
 from tkinter import messagebox
 from tkinter import simpledialog
-
+import time
 
 current_menu_level = 0
 back_command = "b"
@@ -650,8 +650,15 @@ def choose_ascii_art():
         print("Invalid choice. Please select a valid option.")
         return choose_ascii_art()
 
+import sys
+
+def delay_and_exit():
+    print("Final date decision made. Closing in 10 seconds...")
+    time.sleep(10)
+    sys.exit()
+
 def main():
-    print("Welcome to the expirimental date ideas project\n")
+    print("Welcome to the experimental date ideas project\n")
     display_heart()
 
     while True:
@@ -684,6 +691,9 @@ def main():
             choose_ascii_art()
         else:
             print("\nInvalid choice. Please select a valid category.")
+    
+    # Add a delay before exiting the application
+    delay_and_exit()
 
 if __name__ == "__main__":
     main()
