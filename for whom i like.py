@@ -375,20 +375,40 @@ def choose_balloon_animal():
                            "0. Back\n"))
 
         if choice == 1:
-            return random.choice(balloon_animals)
+            chosen_animal = random.choice(balloon_animals)
         elif choice == 2:
             selected_option = int(input("\nEnter the number corresponding to your choice: "))
             if 1 <= selected_option <= len(balloon_animals):
-                return balloon_animals[selected_option - 1]
+                chosen_animal = balloon_animals[selected_option - 1]
             else:
                 print("Invalid option. The code will pick for you.")
-                return random.choice(balloon_animals)
+                chosen_animal = random.choice(balloon_animals)
         elif choice == 0:
             break
         else:
             print("Invalid choice. The code will pick for you.")
-            return random.choice(balloon_animals)
+            chosen_animal = random.choice(balloon_animals)
 
+        if chosen_animal == "Dog":
+            print("Here's a YouTube link to learn how to make a balloon dog:")
+            print("https://www.youtube.com/watch?v=nmVEjx1DCqk&pp=ygUUZG9nIGJhbGxvb24gdHV0b3JpYWw%3D")
+        elif chosen_animal == "Cat":
+            print("Here's a YouTube link to learn how to make a balloon cat:")
+            print("https://www.youtube.com/watch?v=WbxxmcbeLO8&pp=ygUUY2F0IGJhbGxvb24gdHV0b3JpYWw%3D")
+        elif chosen_animal == "Elephant":
+            print("Here's a YouTube link to learn how to make a balloon elephant:")
+            print("https://www.youtube.com/watch?v=ztr-1a_e8cY&pp=ygUXZWxlcGhhbnQgYmFsbG9vbiBhbmltYWw%3D")
+        elif chosen_animal == "Sword":
+            print("Here's a YouTube link to learn how to make a balloon sword:")
+            print("https://www.youtube.com/watch?v=j1PI6KJ79bg&pp=ygUUc3dvcmQgYmFsbG9vbiBhbmltYWw%3D")
+        elif chosen_animal == "Flower":
+            print("Here's a YouTube link to learn how to make a balloon flower:")
+            print("https://www.youtube.com/watch?v=fIQchMKeP0w&pp=ygUVZmxvd2VyIGJhbGxvb24gYW5pbWFs")
+        else:
+            print("Invalid choice. Please select a valid option.")
+            return choose_balloon_animal()
+
+        break
 def choose_amusement_park():
     amusement_park_options = ["Castles", "Enchanted", "Hurricane"]
     print("\nAmusement Park Options:")
